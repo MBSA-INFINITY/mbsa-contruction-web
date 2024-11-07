@@ -83,7 +83,11 @@ body {
 }
 #mainNav.navbar-shrink .navbar-brand svg,
 #mainNav.navbar-shrink .navbar-brand img {
-  height: 1.5rem;
+  height: 3rem;
+  background-image: url("/img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
 }
 
 @media screen and (min-width: 992px) {
@@ -97,6 +101,7 @@ body {
   .btn-navbar {
     margin-left: 1rem;
   }
+ 
 }
 /* Navbar*/
 
