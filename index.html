@@ -19,12 +19,22 @@
 
     <title> Shraddha Design Pvt Ltd. </title>
 </head>
-
+<style>
+    .gradient{  
+  background: linear-gradient(to right, white, #004aad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+    .logo{
+        width: 14rem;
+        height: 3rem;
+    }
+</style>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
         <div class="container" data-aos="fade-right" data-aos-duration="2000">
-            <a class="navbar-brand" href="#"> <img src="./img/logo1.png" alt="" height="50" width="220"></a>
+            <a class="navbar-brand " href="#"> <img class="logo" src="./img/logo1.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,23 +42,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav  ml-auto text-center ">
                     <li class="nav-item  ">
-                        <a class="nav-link " href="#"> Home </a>
+                        <a class="nav-link" href="#"> Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#aboutus">About Us</a>
+                        <a class="nav-link gradient" href="#aboutus">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects"> Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services"> Services</a>
+                        <a class="nav-link gradient" href="#services"> Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#team">Team</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact us</a>
+                        <a class="nav-link gradient" href="#contact">Contact us</a>
                     </li>
 
                 </ul>
@@ -70,7 +80,7 @@
 
             <div class="masthead-heading text-center">
                 <p class="text-uppercase mb-0 " data-aos="fade-up" data-aos-duration="2000">CREATIVE BUILDERS</p>
-                <h1 class="text-uppercase" data-aos="fade-up" data-aos-duration="2000">DESIGN CONSULTANCY SERVICES
+                <h1 class="text-uppercase gradient" data-aos="fade-up" data-aos-duration="2000">DESIGN CONSULTANCY SERVICES
                 </h1>
                 <!-- <button class="text-uppercase btn btn-masthead" data-aos="fade-up" data-aos-duration="2000"> Hire
                 </button> -->
@@ -204,97 +214,108 @@
                         role="tab" aria-controls="pills-all" aria-selected="true">All Projects</a>
                 </li>
                 <li class="nav-item flex-sm-fill" role="presentation">
-                    <a class="nav-link text-uppercase" id="pills-renovations-tab" data-toggle="pill"
-                        href="#pills-renovations" role="tab" aria-controls="pills-renovations"
-                        aria-selected="false">Renovations</a>
+                    <a class="nav-link text-uppercase" id="pills-commercial-tab" data-toggle="pill"
+                        href="#pills-commercial" role="tab" aria-controls="pills-commercial"
+                        aria-selected="false">Commercial</a>
                 </li>
                 <li class="nav-item flex-sm-fill" role="presentation">
-                    <a class="nav-link text-uppercase" id="pills-buildings-tab" data-toggle="pill"
-                        href="#pills-buildings" role="tab" aria-controls="pills-buildings"
-                        aria-selected="false">Buildings</a>
+                    <a class="nav-link text-uppercase" id="pills-resedential-tab" data-toggle="pill"
+                        href="#pills-resedential" role="tab" aria-controls="pills-resedential"
+                        aria-selected="false">Residential</a>
                 </li>
-                <li class="nav-item flex-sm-fill" role="presentation">
+                <!-- <li class="nav-item flex-sm-fill" role="presentation">
                     <a class="nav-link text-uppercase" id="pills-roads-tab" data-toggle="pill" href="#pills-roads"
                         role="tab" aria-controls="pills-roads" aria-selected="false">Roads</a>
-                </li>
-                <li class="nav-item flex-sm-fill" role="presentation">
+                </li> -->
+                <!-- <li class="nav-item flex-sm-fill" role="presentation">
                     <a class="nav-link text-uppercase" id="pills-bridges-tab" data-toggle="pill" href="#pills-bridges"
                         role="tab" aria-controls="pills-bridges" aria-selected="false">Bridges</a>
-                </li>
+                </li> -->
             </ul>
             <div class="tab-content" id="pills-tabContent" data-aos="zoom-in" data-aos-duration="2000">
                 <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-                    <div class="row ">
-                        <div class="col-md-4 mb-4 project__image">
-                            <div class="project__img">
-                                <img class="w-100 gallery" src="./img/projects/1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
+                    <div class="row">
+
+    <!-- Modal Container -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" id="modal1-close-btn" onclick="closeModal('modal1')">&times;</span>
+                        <h2>VAISHNAVI ORCHID</h2>
+                        <p>This is a custom modal window.</p>
+                    </div>
+                </div>
+                <div id="modal2" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" id="modal2-close-btn" onclick="closeModal('modal2')">&times;</span>
+                        <h2>PLANET SKS</h2>
+                        <p>This is a custom modal window.</p>
+                    </div>
+                </div>
+    <script>
+        // Get elements
+        function openModel(modalId){
+                document.getElementById(modalId).style.display = 'flex';
+        }
+        function closeModal(modalId){
+            document.getElementById(modalId).style.display = 'none';
+        }
+            const openModalBtn = document.getElementById('openModalBtn');
+            const modal = document.getElementById('modal');
+            const closeBtn = document.querySelector('.close-btn');
+
+            // Function to open the modal
+            openModalBtn.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+
+            // Function to close the modal when clicking the close button
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // Function to close the modal when clicking outside the modal content
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+    </script>
+                        <div class="col-md-4 mb-4" onclick="openModel('modal1')">
                             <div class="project__img">
                                 <img class="w-100" src="./img/projects/2.png" alt="">
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 mb-4" onclick="openModel('modal2')">
                             <div class="project__img">
                                 <img class="w-100" src="./img/projects/3.png" alt="">
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="tab-pane fade" id="pills-commercial" role="tabpanel"
+                    aria-labelledby="pills-commercial-tab">
                     <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="project__img">
-                                <img class="w-100" src="./img/projects/4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="project__img">
-                                <img class="w-100" src="./img/projects/5.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 mb-2">
                             <div class="project__img">
                                 <img class="w-100" src="/img/projects/6.png" alt="">
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="tab-pane fade" id="pills-resedential" role="tabpanel" aria-labelledby="pills-resedential-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-2">
+                            <div class="project__img">
+                                <img class="w-100" src="./img/projects/4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                </div>
-                <div class="tab-pane fade" id="pills-renovations" role="tabpanel"
-                    aria-labelledby="pills-renovations-tab">
-                    <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <div class="project__img">
-                                <img class="w-100" src="/img/projects/6.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <div class="project__img">
-                                <img class="w-100" src="./img/projects/4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <div class="project__img">
-                                <img class="w-100" src="./img/projects/2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-buildings" role="tabpanel" aria-labelledby="pills-buildings-tab">
-                    <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <div class="project__img">
-                                <img class="w-100" src="./img/projects/4.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-roads" role="tabpanel" aria-labelledby="pills-roads-tab">
+                <!-- <div class="tab-pane fade" id="pills-bridges" role="tabpanel" aria-labelledby="pills-bridges-tab">
                     <h4 class="ml-4"> No projects yet </h4>
-                </div>
-                <div class="tab-pane fade" id="pills-bridges" role="tabpanel" aria-labelledby="pills-bridges-tab">
-                    <h4 class="ml-4"> No projects yet </h4>
-                </div>
+                </div> -->
             </div>
             <div class="text-center mt-3">
                 <button class="btn btn-general text-uppercase font-weight-bold"> View all </button>
@@ -580,7 +601,7 @@
             </div>
             <div class="d-flex flex-column justify-content-between flex-lg-row mt-5 text-center text-lg-left">
                 <div class="mb-5">
-                    <img src="./img/logo.png" alt="" height="50" width="200">
+                    <img src="./img/logo1.png" alt="" height="50" width="200">
                 </div>
                 <p>COPYRIGHT © SHRADDHADESIGNTECH | 2024 | ALL RIGHTS RESERVED.</p>
             </div>
@@ -594,6 +615,7 @@
     <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="./assets/popper/popper.min.js"></script>
     <!-- Animations Links -->
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Javascript Link -->
