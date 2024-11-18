@@ -240,14 +240,16 @@
                 <div id="modal1" class="modal">
                     <div class="modal-content">
                         <span class="close-btn" id="modal1-close-btn" onclick="closeModal('modal1')">&times;</span>
-                        <h2>VAISHNAVI ORCHID</h2>
+                        <h2 class="text-center">VAISHNAVI ORCHID</h2>
+                        <br>
+                        <b><h3>SCOPE OF WORK</h3></b>
                         <p>This is a custom modal window.</p>
                     </div>
                 </div>
                 <div id="modal2" class="modal">
                     <div class="modal-content">
                         <span class="close-btn" id="modal2-close-btn" onclick="closeModal('modal2')">&times;</span>
-                        <h2>PLANET SKS</h2>
+                        <h2 class="text-center">PLANET SKS</h2>
                         <p>This is a custom modal window.</p>
                     </div>
                 </div>
@@ -255,6 +257,9 @@
         // Get elements
         function openModel(modalId){
                 document.getElementById(modalId).style.display = 'flex';
+                const targetElement = document.getElementById(modalId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(()=>{window.scrollBy(0, -50);}, 100)
         }
         function closeModal(modalId){
             document.getElementById(modalId).style.display = 'none';
