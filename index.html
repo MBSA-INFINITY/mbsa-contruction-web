@@ -32,7 +32,7 @@
 </style>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav" style="z-index: 500;">
         <div class="container" data-aos="fade-right" data-aos-duration="2000">
             <a class="navbar-brand " href="#"> <img class="logo" src="./img/logo1.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -232,13 +232,13 @@
                         role="tab" aria-controls="pills-bridges" aria-selected="false">Bridges</a>
                 </li> -->
             </ul>
-            <div id="modal1" class="modal">
+            <div id="modal1-laptop" class="modal">
                 <div class="modal-content">
-                    <span class="close-btn" id="modal1-close-btn" onclick="closeModal('modal1')">&times;</span>
+                    <span class="close-btn" id="modal1-close-btn" onclick="closeModal('modal1-laptop')">&times;</span>
                     <h3 class="text-center"><u>VAISHNAVI ORCHID</u></h3>
                     <br>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-8">
                             <h4><b><u>SCOPE OF WORK</u></b></h4> <br>
                             <h6><b>STRUCTURAL & MEP Services:</b>
                                 </h6>
@@ -262,7 +262,45 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-6"></div>
+                        <div class="col-4">
+                            <!-- <div class="project__img"> -->
+                                <img src="./img/projects/2.png" alt="" style="height: 24rem; width: 26rem;">
+                            <!-- </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="modal1-mobile" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="modal1-close-btn" onclick="closeModal('modal1-mobile')">&times;</span>
+                    <h3 class="text-center"><u>VAISHNAVI ORCHID</u></h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4><b><u>SCOPE OF WORK</u></b></h4> <br>
+                            <h6><b>STRUCTURAL & MEP Services:</b>
+                                </h6>
+                            <div class="mx-3">
+                                <ul>
+                                    <li>Preliminary Concepts</li>
+                                    <li>Detailed design
+                                    </li>
+                                    <li>Tender</li>
+                                </ul>
+                            </div>
+                            <h4><b><u>DETAILS</u></b></h4>  <br>
+                            <div class="mx-3">
+                                <ul>
+                                    <li><b>Client</b>: Vaishnavi Villas, Bangalore</li>
+                                    <li><b>Architect</b>: Fluid Space, Bangalore</li>
+                                    <li><b>Features</b>: 108 Residential Duplex House with common, basement in 4.5acres</li>
+                                    <li><b>Size</b>: 450000 Sq ft</li>
+                                    <li><b>Status</b>: Completed</li>
+                                    <li><b>Location</b>: Sarjapura, Bangalore</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -312,15 +350,27 @@
     <script>
         // Get elements
         function openModel(modalId){
-                document.getElementById(modalId).style.display = 'flex';
-                const targetElement = document.getElementById(modalId);
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                setTimeout(()=>{window.scrollBy(0, -50);}, 100)
+            isMobile = detectDeviceType()
+            if(isMobile){
+
+                document.getElementById(`${modalId}-mobile`).style.display = 'flex';
+                // const targetElement = document.getElementById(modalId);
+                // targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+            else{
+                document.getElementById(`${modalId}-laptop`).style.display = 'flex';
+
+            }
+                
         }
         function closeModal(modalId){
             document.getElementById(modalId).style.display = 'none';
         }
-           
+        function detectDeviceType() {
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            return isMobile
+            
+        }
 
     </script>
                         <div class="col-md-4 mb-4" onclick="openModel('modal1')">
